@@ -3,7 +3,7 @@ Java program to process given input to expected output of household name, size, 
 
 Running the Program
 - Device must have Java Runtime Environment installed and files downloaded.
-- Run "javac Solution.java" then "java Solution" within project files folder.
+- Run "javac Solution.java" then "java Solution" within project files src folder.
 - The output file is automatically generated in the same folder.
 
 Assumptions

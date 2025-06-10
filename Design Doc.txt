@@ -1,0 +1,27 @@
+Overview
+Java program to process given input to expected output of household name, size, and 18+ year old occupants
+
+Running the Program
+- Device must have Java Runtime Environment installed and files downloaded.
+- In terminal, Run "javac Solution.java" then "java Solution" within project files folder in terminal.
+- The output file is automatically generated in the same folder.
+
+Assumptions
+- Children are included in total household size, but are not printed to file. Information is still kept for possible future use.
+- Information is set to uppercase for standardization of data and processing.
+- Input will continue to have consistent number of provided data points.
+- File location assumed to be static and name of "input.txt" for testing purposes
+
+Logic Summary
+1. In main, a “households” map containing instances of the Household class is created.
+2. Input data is read, formatted (i.e. removing erroneous punctuation and trailing whitespaces), converted into Household instances, and stored in the households map.
+3. Each Household object is differentiated via a custom key, householdKey, which is basically just the household address. Each Household object also contains an ArrayList of all its occupants.
+4. Once all input is read and saved, the writeFile method is called to properly sort and print required household and name info.
+5. The Collections sort compareTo is overridden to sort by last then first name alphabetically while maintaining grouping of same last names. Minors are prevented from being printed to the file.
+
+Notes and Tradeoffs
+- ArrayList is used over LinkedList for occupants due to small input size. Due to alphabetic sorting needed on larger lists for proper output, the latter might be preferable.
+- Getters and setters are implemented by default to maintain encapsulation principle.
+- BufferedReader is used for generally faster read time, and can be modified in future to change buffer size for efficiency.
+- Output is formatted with household name being the address, with number of occupants in parentheses.
+- Preprocessing is done with variation of case and punctuation in mind, to the extent shown in the input file. Additional generalizing is possible.
